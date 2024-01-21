@@ -1,0 +1,85 @@
+<div class="dataBindingExample">
+  <div class="exampleArea1">
+    <h1 class="heading">What is Data Binding ?</h1>
+    <ul class="definition">Data binding is the communication between the Typescript component and the HTML template</ul>
+
+    <h2 class="notesHeading">4 ways of Data Binding</h2>
+
+      <ul class="definition">
+        <li>Method 1 & 2 are from the ts component to the HTML template</li>
+        <li>Method 3 is from the HTML template to the ts component</li>
+        <li>Method 4 is 2 way Binding between both Html and ts</li>
+      </ul>
+
+    <h3 class="notesSubHeading">Method: 1 String Interpolation</h3>
+
+    <ul class="definition">
+      <li>Used to usually output some value to the HTML template</li>
+    </ul>
+
+    <ol>My name is: {{name}}</ol>
+  </div>
+
+  <div class="exampleArea2">
+    <h3 class="notesSubHeading">Method: 2 Property Binding</h3>
+
+    <ul class="definition">
+      <li>Property Binding uses square brackets [ ] to change any element's property declared in ts to HTML</li>
+      <li>In this case the src property of the img element to display the angular logo:</li>
+    </ul>
+
+    <div class="imagePropertyBinding">
+      <img [src]="imagePath" alt="angularLogo">
+    </div>
+  </div>
+
+  <div class="exampleArea3">
+    <h3 class="notesSubHeading">Method: 3 Event Binding</h3>
+
+    <ul class="definition">
+      <li>Event Binding uses paranthesis {{specialChar}}</li>
+      <li>Can be used to listen for user actions like keystrokes, mouse movements, click etc</li>
+      <li>In this case the the keystrokes of the text in textbox is sent to ts and displayed in console.log</li>
+    </ul>
+
+    <div class="textEventBinding">
+      <input (keyup)="passValueToComponent($any($event).target.value)" />
+    </div>
+  </div>
+
+  <div class="exampleArea4">
+    <h3 class="notesSubHeading">Method: 4 Two-Way Binding</h3>
+
+    <ul class="definition">
+      <li>Two-Way Binding uses the banana in the box method => ( {{specialChar}} )</li>
+      <li>Binding happens in both the directions simultaneously between HTML and TS</li>
+      <li>In this case whatever typed in txtBox shows in span and whatever changed in declaration TS shows in textbox</li>
+    </ul>
+
+    <div class="twoWayBinding">
+      <input type="text" [(ngModel)]="myFavFood">
+      <span>{{myFavFood}}</span>
+    </div>
+  </div>
+
+  <div class="exampleArea5">
+    <h3 class="notesSubHeading">Practice Data Binding Using all the above methods</h3>
+
+    <ul class="definition">
+      <li>1 textbox</li>
+      <li>1 label</li>
+      <li>1 button</li>
+      <li>button must be disabled if text and label show same value</li>
+      <li>button must be enabled if text and label are not same value</li>
+    </ul>
+
+    <div class="binding">
+      <input type="text" [(ngModel)]="submitted">
+      <span>{{myFavFood}}</span>
+
+        <button class="checker" [disabled] = "isDisabled" (click)="checkValues()">Check</button>
+        <button (click)="reset()">Reset</button>
+    </div>
+  </div>
+
+</div>
